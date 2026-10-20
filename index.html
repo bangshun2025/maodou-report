@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广西毛豆种植项目 · 投资决策商业报告</title>
+<style>
+:root{
+  --red:#F5325B;
+  --red-deep:#D81E45;
+  --red-soft:#FFF0F3;
+  --ink:#2B2220;
+  --ink2:#5C4E48;
+  --ink3:#8A7A72;
+  --line:#F2E5DD;
+  --card:#FFFFFF;
+  --gold:#B07A16;
+  --gold-soft:#FDF6E6;
+  --green:#1F7F63;
+  --green-soft:#EAF7F2;
+  --amber:#BC6A12;
+  --amber-soft:#FDF1E2;
+  --danger:#C62F27;
+  --danger-soft:#FDECEA;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 600px at 10% -5%, #FFEDE4 0%, rgba(255,237,228,0) 60%),
+    radial-gradient(900px 500px at 100% 0%, #FFF3F0 0%, rgba(255,243,240,0) 55%),
+    linear-gradient(180deg,#FFF9F5 0%,#FFFDFB 35%,#FFFBF8 100%);
+  font-size:20px;
+  line-height:1.92;
+  letter-spacing:.2px;
+  padding-bottom:80px;
+}
+.wrap{max-width:780px;margin:0 auto;padding:0 22px;}
+
+/* ---------- HERO ---------- */
+.hero{
+  max-width:780px;margin:0 auto;padding:46px 22px 10px;
+}
+.hero .pills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;}
+.pill{
+  display:inline-block;padding:8px 18px;border-radius:999px;
+  font-size:16px;font-weight:700;letter-spacing:.5px;
+  background:var(--red);color:#fff;box-shadow:0 6px 16px rgba(245,50,91,.28);
+}
+.pill.ghost{
+  background:#fff;color:var(--red-deep);border:1.5px solid #FFD3DC;box-shadow:none;
+}
+h1{
+  font-size:46px;line-height:1.28;letter-spacing:-.5px;font-weight:900;
+}
+h1 .thin{display:block;font-size:30px;font-weight:800;color:var(--red-deep);margin-top:10px;letter-spacing:0;}
+.hero .meta{margin-top:22px;font-size:18px;color:var(--ink3);}
+.hero .rule{height:4px;width:76px;background:var(--red);border-radius:4px;margin:26px 0 0;}
+
+/* ---------- 顶部信息三卡 ---------- */
+.facts{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px;
+}
+.fact{
+  background:var(--card);border-radius:18px;padding:18px 16px;
+  border:1px solid var(--line);box-shadow:0 8px 24px rgba(196,124,96,.07);
+}
+.fact .k{font-size:15px;color:var(--ink3);font-weight:700;letter-spacing:.5px;}
+.fact .v{font-size:18.5px;font-weight:800;margin-top:6px;line-height:1.55;}
+.fact .v small{display:block;font-size:15.5px;font-weight:600;color:var(--ink2);margin-top:2px;}
+
+/* ---------- 导读 ---------- */
+.toc{
+  background:#fff;border-radius:24px;padding:26px 24px 22px;margin-top:34px;
+  border:1px solid var(--line);box-shadow:0 10px 34px rgba(196,124,96,.08);
+}
+.toc h2{font-size:22px;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.toc h2::before{content:"";width:8px;height:24px;background:var(--red);border-radius:4px;display:block;}
+.toc ol{list-style:none;counter-reset:toc;}
+.toc li{
+  counter-increment:toc;font-size:18px;color:var(--ink2);padding:9px 0;
+  border-bottom:1px dashed #F5E9E2;display:flex;gap:12px;align-items:baseline;font-weight:600;
+}
+.toc li:last-child{border-bottom:none;}
+.toc li::before{
+  content:counter(toc,decimal-leading-zero);
+  font-size:15px;font-weight:900;color:var(--red);min-width:26px;
+}
+
+/* ---------- 章节 ---------- */
+section.ch{margin-top:56px;}
+.ch-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:8px;}
+.ch-num{
+  flex:0 0 auto;width:54px;height:54px;border-radius:16px;
+  background:linear-gradient(140deg,var(--red) 0%,#FF7A57 100%);
+  color:#fff;font-size:22px;font-weight:900;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 22px rgba(245,50,91,.25);letter-spacing:-.5px;
+}
+.ch-head h2{font-size:29px;line-height:1.42;font-weight:900;padding-top:4px;letter-spacing:-.3px;}
+.ch-sub{font-size:17px;color:var(--ink3);margin:2px 0 0 68px;font-weight:600;}
+
+h3{font-size:22.5px;font-weight:900;margin:34px 0 12px;line-height:1.55;letter-spacing:-.2px;}
+h3 .tag-inline{
+  display:inline-block;font-size:15px;font-weight:800;color:var(--red-deep);
+  background:var(--red-soft);padding:3px 12px;border-radius:8px;margin-left:10px;vertical-align:3px;
+}
+h4{font-size:19.5px;font-weight:900;margin:22px 0 8px;}
+p{margin:12px 0;}
+p.lead{font-size:20px;}
+strong{font-weight:900;color:#211917;}
+em.hl{
+  font-style:normal;font-weight:900;color:var(--red-deep);
+  background:linear-gradient(180deg,transparent 62%,#FFD9E1 62%);
+  padding:0 2px;
+}
+
+/* ---------- 卡片 ---------- */
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:22px;
+  padding:24px 24px;margin:20px 0;box-shadow:0 10px 30px rgba(196,124,96,.07);
+}
+.card.tight{padding:20px 20px;}
+
+/* 引言结论 */
+.quote{
+  background:linear-gradient(135deg,#FFF3F5 0%,#FFF9F6 100%);
+  border-left:7px solid var(--red);border-radius:6px 20px 20px 6px;
+  padding:22px 24px;margin:24px 0;font-size:20px;line-height:1.95;font-weight:600;color:#3A2B29;
+}
+.quote .lab{
+  display:block;font-size:15px;font-weight:900;color:var(--red);letter-spacing:1px;margin-bottom:8px;
+}
+
+/* ---------- 地点卡 ---------- */
+.place{
+  background:#fff;border-radius:24px;border:1px solid var(--line);
+  padding:0 0 20px;margin:22px 0;overflow:hidden;
+  box-shadow:0 12px 34px rgba(196,124,96,.09);
+}
+.place-top{
+  padding:20px 22px 16px;border-bottom:1px solid var(--line);
+  background:linear-gradient(135deg,#FFF6F8 0%,#FFFCFA 100%);
+}
+.place-top h3{margin:10px 0 0;font-size:24px;}
+.badge{
+  display:inline-block;font-size:15px;font-weight:900;padding:5px 14px;border-radius:999px;letter-spacing:.4px;
+}
+.badge.first{background:var(--red);color:#fff;}
+.badge.second{background:var(--amber-soft);color:var(--amber);border:1.5px solid #F3DCBC;}
+.badge.third{background:#EEF1F8;color:#3A4F86;border:1.5px solid #DCE3F3;}
+.kv{padding:14px 22px 0;}
+.kv .k{
+  display:block;font-size:17px;font-weight:900;color:var(--red-deep);
+  letter-spacing:.6px;margin-bottom:5px;
+}
+.kv p{margin:0;font-size:19px;line-height:1.88;color:#332724;}
+
+/* ---------- 等级 pill ---------- */
+.lv{display:inline-block;font-size:16px;font-weight:900;padding:2px 11px;border-radius:8px;white-space:nowrap;}
+.lv.high{background:var(--danger-soft);color:var(--danger);}
+.lv.mid{background:var(--amber-soft);color:var(--amber);}
+.lv.low{background:var(--green-soft);color:var(--green);}
+
+/* ---------- 风险矩阵 ---------- */
+.matrix-row{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed #F4E8E1;font-size:19px;align-items:baseline;}
+.matrix-row:last-child{border-bottom:none;}
+.matrix-row .mk{flex:0 0 118px;font-weight:900;color:var(--ink2);font-size:17px;}
+
+/* ---------- 成本卡 ---------- */
+.cost{
+  display:flex;gap:14px;padding:18px 0;border-bottom:1px dashed #F4E8E1;align-items:flex-start;
+}
+.cost:last-child{border-bottom:none;}
+.cost .cname{flex:0 0 150px;font-weight:900;font-size:19px;line-height:1.6;}
+.cost .cbody{flex:1;font-size:18.5px;line-height:1.85;color:#3A2C28;}
+.cost .cbase{font-size:16.5px;color:var(--ink3);font-weight:700;display:block;margin-bottom:4px;}
+.cost.up{background:linear-gradient(90deg,#FFF6F8 0%,rgba(255,255,255,0) 85%);border-radius:14px;padding-left:14px;margin-left:-14px;}
+.cost.up .cname{color:var(--red-deep);}
+
+/* ---------- 年景卡 ---------- */
+.scene{
+  border-radius:22px;padding:22px 22px;margin:16px 0;border:1.5px solid var(--line);background:#fff;
+}
+.scene h4{margin:0 0 6px;font-size:22px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.scene .flag{font-size:15px;font-weight:900;padding:3px 12px;border-radius:999px;}
+.scene .row{font-size:18.5px;line-height:1.85;margin-top:8px;color:#3A2C28;}
+.scene .row b{font-weight:900;}
+.scene.ok{border-color:#CFE9DF;background:linear-gradient(150deg,#F6FCF9 0%,#fff 60%);}
+.scene.ok .flag{background:var(--green-soft);color:var(--green);}
+.scene.base{border-color:#F6DEBB;background:linear-gradient(150deg,#FFFBF3 0%,#fff 60%);box-shadow:0 10px 30px rgba(188,106,18,.10);}
+.scene.base .flag{background:var(--amber);color:#fff;}
+.scene.bad{border-color:#F8CFCB;background:linear-gradient(150deg,#FFF6F5 0%,#fff 60%);}
+.scene.bad .flag{background:var(--danger);color:#fff;}
+
+/* ---------- 否决清单 ---------- */
+.veto{
+  display:flex;gap:16px;padding:20px 22px;border-radius:20px;margin:14px 0;
+  background:linear-gradient(135deg,#FFF7F8 0%,#FFFDFC 100%);
+  border:1px solid #FBDDE3;box-shadow:0 8px 24px rgba(198,47,39,.06);
+}
+.veto .n{
+  flex:0 0 42px;height:42px;border-radius:12px;background:var(--danger);color:#fff;
+  font-size:19px;font-weight:900;display:flex;align-items:center;justify-content:center;
+}
+.veto p{margin:0;font-size:19px;line-height:1.88;}
+
+/* ---------- 核查清单 ---------- */
+.group{
+  background:#fff;border-radius:22px;border:1px solid var(--line);padding:22px 22px 12px;
+  margin:18px 0;box-shadow:0 10px 28px rgba(196,124,96,.07);
+}
+.group h4{margin:0 0 14px;font-size:20px;color:var(--red-deep);display:flex;align-items:center;gap:10px;}
+.group h4 .dot{width:10px;height:10px;border-radius:50%;background:var(--red);}
+.q{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed #F5E9E2;font-size:18.5px;line-height:1.85;}
+.q:last-child{border-bottom:none;}
+.q .qn{
+  flex:0 0 40px;font-size:15.5px;font-weight:900;color:var(--red-deep);background:var(--red-soft);
+  border:1.5px solid #FFD3DC;border-radius:9px;height:28px;
+  display:flex;align-items:center;justify-content:center;margin-top:4px;
+}
+
+/* ---------- 列表 ---------- */
+ul.dots{list-style:none;margin:12px 0;}
+ul.dots li{
+  position:relative;padding-left:26px;margin:11px 0;font-size:19px;line-height:1.88;
+}
+ul.dots li::before{
+  content:"";position:absolute;left:6px;top:14px;width:9px;height:9px;border-radius:50%;
+  background:var(--red);opacity:.85;
+}
+
+/* ---------- 交付物 ---------- */
+.deliver{
+  background:linear-gradient(135deg,#FFF8F2 0%,#FFFDFB 100%);
+  border:1.5px dashed #F3D6C4;border-radius:22px;padding:24px 24px;
+}
+.deliver .no{
+  display:inline-block;font-size:16px;font-weight:900;color:#fff;background:var(--gold);
+  padding:2px 12px;border-radius:8px;margin-bottom:10px;letter-spacing:1px;
+}
+
+/* ---------- 数据说明 ---------- */
+.notes{counter-reset:note;}
+.notes li{
+  list-style:none;counter-increment:note;position:relative;padding-left:38px;
+  margin:16px 0;font-size:18px;line-height:1.9;color:#4A3B36;
+}
+.notes li::before{
+  content:counter(note);position:absolute;left:0;top:2px;width:26px;height:26px;border-radius:8px;
+  background:#F6EDE7;color:#9A7A6C;font-size:14px;font-weight:900;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* ---------- 底部 ---------- */
+.footer{
+  max-width:780px;margin:64px auto 0;padding:0 22px;text-align:center;
+}
+.footer .line{height:1px;background:linear-gradient(90deg,transparent,#EFDCD2,transparent);margin-bottom:26px;}
+.footer p{font-size:17px;color:var(--ink3);line-height:1.9;}
+.footer .seal{
+  display:inline-block;margin-top:16px;padding:10px 24px;border-radius:999px;
+  background:var(--red-soft);color:var(--red-deep);font-size:16px;font-weight:900;letter-spacing:.5px;
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:640px){
+  body{font-size:19px;}
+  h1{font-size:36px;}
+  h1 .thin{font-size:25px;}
+  .facts{grid-template-columns:1fr;}
+  .ch-head h2{font-size:25px;}
+  .ch-num{width:46px;height:46px;font-size:19px;border-radius:14px;}
+  .ch-sub{margin-left:0;}
+  .cost{flex-direction:column;gap:6px;}
+  .cost .cname{flex:none;}
+  .matrix-row{flex-direction:column;gap:2px;}
+  .matrix-row .mk{flex:none;}
+  .hero{padding-top:32px;}
+  section.ch{margin-top:46px;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="pills">
+    <span class="pill">投资决策 · 商业报告</span>
+    <span class="pill ghost">气候风险专项</span>
+  </div>
+  <h1>
+    广西毛豆种植项目
+    <span class="thin">投资决策商业报告</span>
+  </h1>
+  <p class="meta">气候数据口径：多年统计与近十余年灾害记录</p>
+  <div class="rule"></div>
+
+  <div class="facts">
+    <div class="fact">
+      <div class="k">产品定位</div>
+      <div class="v">鲜食毛豆<small>带荚鲜销</small></div>
+    </div>
+    <div class="fact">
+      <div class="k">项目阶段</div>
+      <div class="v">种植前<small>投资决策调研</small></div>
+    </div>
+    <div class="fact">
+      <div class="k">数据口径</div>
+      <div class="v">多年气候<small>近十余年灾害记录</small></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- 导读 -->
+  <nav class="toc">
+    <h2>目录</h2>
+    <ol>
+      <li>报告结论与选址决策</li>
+      <li>三地多年气候本底与灾害频率</li>
+      <li>历史气候风险对毛豆关键生长期的实质约束</li>
+      <li>选址方案比较</li>
+      <li>成本结构分析（含气候韧性成本项）</li>
+      <li>销售渠道与气候节奏的匹配</li>
+      <li>实地调研路线与气候专项核查清单</li>
+      <li>投资决策模型</li>
+      <li>一票否决清单</li>
+      <li>调研交付物清单</li>
+      <li>数据说明与风险提示</li>
+    </ol>
+  </nav>
+
+  <!-- 1 -->
+  <section class="ch">
+    <div class="ch-head">
+      <div class="ch-num">01</div>
+      <h2>报告结论与选址决策</h2>
+    </div>
+
+    <h3>核心结论</h3>
+
+    <div class="place">
+      <div class="place-top">
+        <span class="badge first">首选</span>
+        <h3>博白县龙潭镇及周边</h3>
+      </div>
+      <div class="kv">
+        <span class="k">关键气候风险</span>
+        <p>年均降水 1756mm 但<em class="hl">年际波动极大</em>（1963 年仅 1030mm，1970 年达 2381mm）；<em class="hl">秋季降水在部分年份显著偏少</em>（2018 年秋季偏少 29%）；寒露风在 10 月中旬出现的记录明确。</p>
+      </div>
+      <div class="kv">
+        <span class="k">判断</span>
+        <p>博白的产业组织优势仍然最强，但<strong>「秋季干旱 + 寒露风」的组合</strong>要求水源保障和抢收能力必须前置确认，不能假定「桂南温暖就安全」。</p>
+      </div>
+    </div>
+
+    <div class="place">
+      <div class="place-top">
+        <span class="badge second">备选</span>
+        <h3>合浦县公馆镇—闸口镇</h3>
+      </div>
+      <div class="kv">
+        <span class="k">关键气候风险</span>
+        <p>近 10 年<em class="hl">热带气旋占气象灾害的 61.9%</em>，暴雨过程占 23.8%；干旱以<strong>春、秋两季最常见</strong>，2025 年出现重度气象干旱。</p>
+      </div>
+      <div class="kv">
+        <span class="k">判断</span>
+        <p>合浦的威胁排序与博白不同：<strong>台风／暴雨 &gt; 春旱 &gt; 寒露风</strong>。6.5 元／斤的高价信号需要放在这一灾害背景下重新评估。</p>
+      </div>
+    </div>
+
+    <div class="place">
+      <div class="place-top">
+        <span class="badge third">订单验证点</span>
+        <h3>灵川县大圩镇</h3>
+      </div>
+      <div class="kv">
+        <span class="k">关键气候风险</span>
+        <p>寒露风<em class="hl">平均出现日期 10 月 2 日</em>，<em class="hl">最早 9 月 11—13 日</em>，10 月上旬出现机率增大；年降水量约 1941mm。</p>
+      </div>
+      <div class="kv">
+        <span class="k">判断</span>
+        <p>灵川的气候条件<strong>不支持将其视为任何形式的「成本备选」</strong>，其功能严格限定为订单模式参照，且订单约定的采收时间必须避开 9 月下旬至 10 月上旬的寒露风窗口。</p>
+      </div>
+    </div>
+
+    <div class="quote">
+      <span class="lab">核心结论</span>
+      博白可以进入，但必须在灌溉水源和抢收组织两方面前置确认。<strong>博白的秋季干旱不是偶发，是有记录的气候特征，灌溉条件必须按「每年都可能用到」来准备，而不是等旱情出现再安排。</strong>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="ch">
+    <div class="ch-head">
+      <div class="ch-num">02</div>
+      <h2>三地多年气候本底<br>与灾害频率</h2>
+    </div>
+
+    <h3>博白县</h3>
+    <div class="card">
+      <h4>气候本底</h4>
+      <p>多年平均气温 22.5℃，年均降水量 1756.2mm，县城历年降水量在 1600—2100mm 之间，但<em class="hl">极端年份差异悬殊</em>：最多 1970 年 2381.2mm，最少 1963 年仅 1030.9mm，相差超过 1350mm。近 20 年极端最高气温 38.4℃（2005 年 7 月），极端最低气温 1.5℃（2016 年 1 月）。</p>
+
+      <h4>灾害记录的关键发现</h4>
+      <ul class="dots">
+        <li><strong>2018 年</strong>：年降水量 1535.9mm，<em class="hl">较常年偏少 14.5%</em>；秋季降水量 195.2mm，<em class="hl">较常年同期偏少 29.0%</em>；年内受霜冻、春旱、寒露风、暴雨和台风影响。</li>
+        <li><strong>寒露风有明确记录</strong>：2018 年 10 月 10—12 日和 15—19 日出现 2 次日平均气温 ≤22℃、连续 3 天以上的寒露风过程，极端最低气温 17.8℃（10 月 17 日）。</li>
+        <li><strong>暴雨风险并未因「降水偏少」而消失</strong>：2023 年博白出现 4 次特大暴雨天气过程，启动应急响应 10 次。</li>
+        <li>博白南部（龙潭、大坝一带）在台风影响期间处于抽穗期的稻田曾出现<strong>减产一半以上</strong>的记录，提示南部沿海乡镇对台风环流的风雨影响更为敏感。</li>
+      </ul>
+
+      <h4>对毛豆的含义</h4>
+      <p>博白的秋季（9—11 月）在某些年份<em class="hl">同时面临降水偏少和寒露风</em>，这不是非旱即冷的二选一，而是<strong>干旱削弱植株抗性、寒露风压缩灌浆时间</strong>的叠加情景。灌溉和水源必须按<strong>应对秋季干旱</strong>来配置。</p>
+    </div>
+
+    <h3>合浦县</h3>
+    <div class="card">
+      <h4>气候本底</h4>
+      <p>多年平均气温约 23℃，年均降水量 1663—1688mm，极端最高气温 37.7℃，极端最低气温 -0.8℃。</p>
+
+      <h4>灾害频率的结构性特征（近 10 年统计，2003—2012 年数据）</h4>
+      <ul class="dots">
+        <li>热带气旋（台风）<em class="hl">13 次，占气象灾害总数的 61.9%</em>；</li>
+        <li>暴雨过程 <strong>5 次，占 23.8%</strong>；</li>
+        <li>气象灾害<strong>集中发生在汛期 5—10 月</strong>；</li>
+        <li>干旱是仅次于台风和暴雨的灾害，<strong>低温冷害相对较少</strong>。</li>
+      </ul>
+
+      <h4>干旱的持续性特征</h4>
+      <p>合浦「几乎每年均有干旱发生」，<em class="hl">春、秋两季旱情最为严重</em>，10 月至次年 3 月为干季，总雨量仅占全年的 13—17%。2025 年 1—4 月，合浦降雨量较常年偏少 4—5 成，出现<strong>重度气象干旱</strong>。1955—1978 年间县城年最长连续无雨天数达 <strong>63 天</strong>（1958 年）。</p>
+
+      <h4>对毛豆的含义</h4>
+      <p>合浦的风险画像与博白有本质区别。<em class="hl">台风和暴雨是汛期的主导威胁，春旱是播种出苗期的结构性约束，秋季干旱则直接影响秋播毛豆的结荚和鼓粒。</em>6.5 元／斤的高价如果对应的是特定小气候或灌溉条件较好的地块，其可复制性需要打折扣。</p>
+    </div>
+
+    <h3>灵川县</h3>
+    <div class="card">
+      <h4>气候本底</h4>
+      <p>年均气温约 18.7℃，年均降水量约 1941mm。9 月平均气温 25.4℃，10 月降至 20.7℃。</p>
+
+      <h4>寒露风是灵川最确定的气候风险</h4>
+      <ul class="dots">
+        <li>寒露风标准为日平均气温降至 <strong>20℃ 以下</strong>并连续 3 天以上；</li>
+        <li><em class="hl">平均出现日期为 10 月 2 日</em>；</li>
+        <li><em class="hl">最早出现于 9 月 11—13 日（1967 年）</em>；</li>
+        <li>9 月下旬出现机率小，<strong>10 月上旬增多，中旬机率加大</strong>。</li>
+      </ul>
+
+      <h4>对毛豆的含义</h4>
+      <p>毛豆开花适温 20—25℃，低于 15℃ 开花延迟、授粉不良。灵川寒露风定义的 20℃ 阈值虽然高于毛豆 15℃ 的下限，但<strong>持续 20℃ 以下的低温寡照会显著拖慢灌浆、增加空荚</strong>。更关键的是，<em class="hl">平均 10 月 2 日出现寒露风</em>意味着在灵川安排秋播毛豆，开花结荚期几乎必然与低温过程重叠。灵川的气候窗口不支持将毛豆作为规模化秋作来规划。</p>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="ch">
+    <div class="ch-head">
+      <div class="ch-num">03</div>
+      <h2>历史气候风险对毛豆<br>关键生长期的实质约束</h2>
+    </div>
+
+    <h3>博白<span class="tag-inline">秋季干旱比寒露风更隐蔽</span></h3>
+    <p>博白 2018 年秋季降水偏少 29%、全年降水偏少 14.5% 的记录，结合其降水量年际波动超过 1350mm 的本底特征，说明<em class="hl">「秋季偏干」不是异常，而是需要纳入年度规划的常态选项</em>。毛豆在开花结荚期对水分胁迫高度敏感，干旱直接导致落花落荚和瘪粒。寒露风的影响则叠加在干旱之上：<strong>植株在水分不足的状态下遭遇低温，灌浆能力进一步下降，采收期被拉长，商品率下滑。</strong></p>
+    <div class="quote">
+      博白防御的真正重点不是「防冷」，而是<strong>在秋旱年份保住灌溉，在寒露风年份保住采收节奏</strong>。两者都需要基础设施和组织能力，而不是农艺技巧。
+    </div>
+
+    <h3>合浦<span class="tag-inline">汛期台风暴雨是首要否决性风险</span></h3>
+    <p>合浦近 10 年 <strong>61.9% 的气象灾害与热带气旋相关</strong>，且灾害集中在 5—10 月。毛豆如果安排在春播（2—3 月播种，5—6 月采收），采收期正撞上前汛期暴雨和台风季的前端。如果安排在秋播，9—10 月仍在台风影响窗口内。</p>
+    <p><em class="hl">合浦的选址逻辑必须包含一条硬约束：目标地块在近 10 年是否有台风暴雨致涝的记录，排水条件是否经过实战检验。</em>6.5 元／斤的价格信号如果来自排水条件优越、能够规避台风正面影响的地块，其参考价值才成立；如果来自普通大田，则不能作为普遍假设。</p>
+
+    <h3>灵川<span class="tag-inline">寒露风出现时间早于毛豆安全窗口</span></h3>
+    <p>灵川寒露风<strong>平均 10 月 2 日出现，最早 9 月中旬</strong>。如果秋播毛豆的目标采收期在 10 月，开花结荚期将落在 9 月下旬至 10 月上旬，<em class="hl">恰好是寒露风机率从小到大的转折区间</em>。这意味着灵川的秋播毛豆面临的是一个<strong>结构性的窗口不匹配</strong>，而不是偶发风险。作为订单验证点，灵川的订单条款必须明确：<strong>采收时间是否允许因寒露风提前或推迟，违约条款如何设计。</strong></p>
+  </section>
+
+  <!-- 4 -->
+  <section class="ch">
+    <div class="ch-head">
+      <div class="ch-num">04</div>
+      <h2>选址方案比较</h2>
+    </div>
+    <div class="ch-sub">三地多年气候风险矩阵</div>
+
+    <div class="place">
+      <div class="place-top">
+        <span class="badge first">首选</span>
+        <h3>博白</h3>
+      </div>
+      <div class="kv">
+        <div class="matrix-row"><span class="mk">年均气温</span><span>22.5℃</span></div>
+        <div class="matrix-row"><span class="mk">年均降水</span><span>1756mm，<strong>年际差超 1350mm</strong></span></div>
+        <div class="matrix-row"><span class="mk">首要灾害</span><span>秋季干旱 + 寒露风（叠加）</span></div>
+        <div class="matrix-row"><span class="mk">寒露风</span><span><span class="lv mid">中</span> 10 月中旬有记录</span></div>
+        <div class="matrix-row"><span class="mk">干旱</span><span><span class="lv high">中高</span> 秋季偏少有记录</span></div>
+        <div class="matrix-row"><span class="mk">台风暴雨</span><span><span class="lv mid">中</span> 2023 年 4 次特大暴雨</span></div>
+        <div class="matrix-row"><span class="mk">窗口友好度</span><span><strong>中等，需灌溉和抢收对冲</strong></span></div>
+      </div>
+    </div>
+
+    <div class="place">
+      <div class="place-top">
+        <span class="badge second">备选</span>
+        <h3>合浦</h3>
+      </div>
+      <div class="kv">
+        <div class="matrix-row"><span class="mk">年均气温</span><span>约 23℃</span></div>
+        <div class="matrix-row"><span class="mk">年均降水</span><span>1663—1688mm</span></div>
+        <div class="matrix-row"><span class="mk">首要灾害</span><span><strong>台风／暴雨（61.9%）</strong> + 春旱</span></div>
+        <div class="matrix-row"><span class="mk">寒露风</span><span><span class="lv low">较低</span> 低温冷害少</span></div>
+        <div class="matrix-row"><span class="mk">干旱</span><span><span class="lv high">高</span> 春、秋两季，2025 年重度</span></div>
+        <div class="matrix-row"><span class="mk">台风暴雨</span><span><span class="lv high">高</span> 汛期 5—10 月集中</span></div>
+        <div class="matrix-row"><span class="mk">窗口友好度</span><span>中等偏低，汛期与采收期重叠</span></div>
+      </div>
+    </div>
+
+    <div class="place">
+      <div class="place-top">
+        <span class="badge third">订单参照</span>
+        <h3>灵川</h3>
+      </div>
+      <div class="kv">
+        <div class="matrix-row"><span class="mk">年均气温</span><span>约 18.7℃</span></div>
+        <div class="matrix-row"><span class="mk">年均降水</span><span>约 1941mm</span></div>
+        <div class="matrix-row"><span class="mk">首要灾害</span><span><strong>寒露风（平均 10 月 2 日）</strong></span></div>
+        <div class="matrix-row"><span class="mk">寒露风</span><span><span class="lv high">高</span> 最早 9 月中旬</span></div>
+        <div class="matrix-row"><span class="mk">干旱</span><span><span class="lv mid">中</span> 降水总量较高</span></div>
+        <div class="matrix-row"><span class="mk">台风暴雨</span><span><span class="lv low">低</span> 内陆桂北</span></div>
+        <div class="matrix-row"><span class="mk">窗口友好度</span><span><strong>低，寒露风窗口与开花结荚期冲突</strong></span></div>
+      </div>
+    </div>
+
+    <div class="quote">
+      <span class="lab">选址结论</span>
+      博白居首，但优势来自<strong>产业组织能力对气候风险的缓冲</strong>，而非气候本身最安全。合浦的备选价值取决于<strong>具体地块的排水实战记录和灌溉水源</strong>，而非笼统的「沿海热量好」。灵川的功能严格限定为<strong>订单条款的谈判参照</strong>，其气候数据不支持任何规模化落点假设。
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="ch">
+    <div class="ch-head">
+      <div class="ch-num">05</div>
+      <h2>成本结构分析<br>（含气候韧性成本项）</h2>
+    </div>
+    <div class="ch-sub">气候韧性相关成本项（博白基准）</div>
+
+    <div class="card">
+      <div class="cost">
+        <div class="cname">地租</div>
+        <div class="cbody"><span class="cbase">约 500 元／亩／年</span>无变化。</div>
+      </div>
+      <div class="cost">
+        <div class="cname">采摘人工</div>
+        <div class="cbody"><span class="cbase">0.5 元／斤计件，或 100 元／天</span>无变化；<strong>寒露风年份抢收可能推高计件单价</strong>。</div>
+      </div>
+      <div class="cost up">
+        <div class="cname">灌溉成本</div>
+        <div class="cbody"><span class="cbase">基准口径：或有项</span><em class="hl">年度必选项</em>：博白秋季降水偏少有明确记录，灌溉设施和运行成本应按每年启用做预算，而非按旱情临时安排。</div>
+      </div>
+      <div class="cost up">
+        <div class="cname">排涝设施</div>
+        <div class="cbody"><span class="cbase">基准口径：已含</span>博白 2023 年有 4 次特大暴雨记录，<em class="hl">旱涝并存</em>，排水沟不能因「偏旱」而省略。</div>
+      </div>
+      <div class="cost up">
+        <div class="cname">台风灾后恢复<small style="display:block;font-size:15px;color:#8A7A72;font-weight:700;">合浦专项</small></div>
+        <div class="cbody"><span class="cbase">基准口径：未计入</span>合浦台风频率 61.9%，需评估<strong>风灾后补种、扶正、病害防治</strong>的潜在支出。</div>
+      </div>
+      <div class="cost up">
+        <div class="cname">抢收应急成本</div>
+        <div class="cbody"><span class="cbase">按日薪上浮 20%—30% 预留</span>博白寒露风有 10 月中旬记录，<em class="hl">抢收窗口可能只有 3—5 天</em>，需按更紧的时限组织用工。</div>
+      </div>
+    </div>
+
+    <div class="quote">
+      <span class="lab">关键判断</span>
+      灌溉应<strong>固化为年度预算科目</strong>。博白 1963 年降水量仅 1030mm、2018 年秋季偏少 29% 的记录，意味着<strong>在项目生命周期内几乎必然遭遇至少一个秋旱年份</strong>。不把灌溉成本计入基准模型，等于用「平均年景」掩盖「必然出现的偏差年景」。
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="ch">
+    <div class="ch-head">
+      <div class="ch-num">06</div>
+      <h2>销售渠道与<br>气候节奏的匹配</h2>
+    </div>
+    <p>博白的整车发货渠道应向代办确认一个<strong>基于历史气候的问题</strong>：<em class="hl">「在 2018 年秋季偏少 29% 的年份，或 2023 年出现 4 次特大暴雨的年份，发车节奏和收购价如何调整？」</em>这个问题比「正常年份多少钱一斤」更能揭示渠道的韧性。</p>
+    <p>合浦 6.5 元／斤的高价信号，应追问<strong>「这个价格对应的地块，在 2025 年春旱重度发生时是否仍然保住了产量和品质？」</strong>如果高价建立在灌溉条件优越的地块上，普通地块的参考价值需要打折。</p>
+    <p>灵川的订单样本（2.6 元／斤）应追问<strong>「订单约定的采收时间是什么月份？如果寒露风在 9 月下旬提前到来，合同是否允许提前采收或调整标准？」</strong>灵川寒露风最早 9 月中旬的记录，使这一问成为订单可行性的核心。</p>
+  </section>
+
+  <!-- 7 -->
+  <section class="ch">
+    <div class="ch-head">
+      <div class="ch-num">07</div>
+      <h2>实地调研路线与<br>气候专项核查清单</h2>
+    </div>
+
+    <h3>调研路线</h3>
+    <p>博白 3 天 → 合浦 1.5 天 → 灵川 1 天（可选）。</p>
+
+    <h3>气候专项核查清单</h3>
+
+    <div class="group">
+      <h4><span class="dot"></span>博白段 · 必问项</h4>
+      <div class="q"><span class="qn">01</span><span><strong>目标地块在过去 10 年中，是否有秋季需要灌溉的记录？</strong>灌溉水源在 10—11 月的实际可用量是多少（而非丰水期流量）？</span></div>
+      <div class="q"><span class="qn">02</span><span><strong>2018 年秋季偏少 29% 时，当地毛豆／大豆种植户的产量损失情况如何？</strong>合作社或农技人员能否提供直观的历史对比？</span></div>
+      <div class="q"><span class="qn">03</span><span><strong>2023 年 4 次特大暴雨期间，目标地块及周边是否受淹？</strong>排水沟的实战表现如何？</span></div>
+      <div class="q"><span class="qn">04</span><span><strong>寒露风年份（如 2018 年 10 月中旬），合作社的抢收组织需要多长时间启动？</strong>计件工钱是否上浮、上浮幅度是多少？</span></div>
+      <div class="q"><span class="qn">05</span><span>技术团队能否给出一个<strong>在博白气候条件下，使秋播毛豆开花结荚期避开 10 月中旬寒露风高风险段</strong>的播期方案？如果方案依赖灌溉抢早播，灌溉成本是否已计入？</span></div>
+    </div>
+
+    <div class="group">
+      <h4><span class="dot"></span>合浦段 · 必问项</h4>
+      <div class="q"><span class="qn">06</span><span><strong>目标地块在近 10 年台风季（5—10 月）是否有过涝渍或风灾减产记录？</strong>排水系统的设计标准是什么？</span></div>
+      <div class="q"><span class="qn">07</span><span><strong>2025 年春旱重度发生时，当地毛豆种植的灌溉应对方式和成本是多少？</strong>6.5 元／斤的收购价是否对应了特定的灌溉保障条件？</span></div>
+      <div class="q"><span class="qn">08</span><span>合浦<strong>春旱</strong>对春播毛豆的出苗和早期生长影响有多大？当地是否有「等雨播种」或「灌溉造墒」的惯例？</span></div>
+    </div>
+
+    <div class="group">
+      <h4><span class="dot"></span>灵川段（可选）· 必问项</h4>
+      <div class="q"><span class="qn">09</span><span>订单毛豆的<strong>约定采收月份</strong>是什么？合同中是否有寒露风提前的应对条款？</span></div>
+      <div class="q"><span class="qn">10</span><span>当地种植户在<strong>9 月下旬寒露风提前年份</strong>的实际采收损失和价格调整情况如何？</span></div>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section class="ch">
+    <div class="ch-head">
+      <div class="ch-num">08</div>
+      <h2>投资决策模型</h2>
+    </div>
+
+    <h3>三档价格 × 三类历史气候年景</h3>
+    <div class="ch-sub" style="margin-bottom:14px;">亩均损益框架（博白基准，亩产 1500 斤，灌溉为年度必选成本）</div>
+
+    <div class="scene ok">
+      <h4>正常年景 <span class="flag">乐观情景</span></h4>
+      <div class="row"><b>历史参照：</b>降水接近常年，寒露风偏晚</div>
+      <div class="row"><b>地头价假设：</b>5.0 元／斤</div>
+      <div class="row"><b>关键成本修正：</b>灌溉可能不启用或低强度启用</div>
+      <div class="row"><b>决策含义：</b>乐观情景，<strong>但不能作为预算基准</strong>。</div>
+    </div>
+
+    <div class="scene base">
+      <h4>秋旱年景 <span class="flag">基准情景</span></h4>
+      <div class="row"><b>历史参照：</b>2018 年秋季偏少 29%</div>
+      <div class="row"><b>地头价假设：</b>3.0 元／斤（干旱可能推高局部价格但产量受损）</div>
+      <div class="row"><b>关键成本修正：</b><em class="hl">灌溉成本全额计入</em></div>
+      <div class="row"><b>决策含义：</b>这是<strong>基准情景</strong>，不是悲观情景。</div>
+    </div>
+
+    <div class="scene bad">
+      <h4>秋旱 + 寒露风叠加 <span class="flag">悲观情景</span></h4>
+      <div class="row"><b>历史参照：</b>2018 年秋季偏少 + 10 月中旬寒露风</div>
+      <div class="row"><b>地头价假设：</b><em class="hl">1.5 元／斤</em>（抢收 + 品质下降 + 集中上市）</div>
+      <div class="row"><b>关键成本修正：</b>灌溉成本 + 抢收上浮</div>
+      <div class="row"><b>决策含义：</b><strong>悲观情景，保本线测试的基准</strong>。</div>
+    </div>
+
+    <div class="quote">
+      <span class="lab">决策规则</span>
+      以<strong>秋旱年景（3.0 元／斤，灌溉全额计入）作为基准决策模型</strong>。如果秋旱年景下扣除地租、采摘、灌溉后剩余覆盖其他成本的空间为正，项目具备基本韧性；如果秋旱年景下已经接近盈亏平衡，则叠加寒露风的悲观情景将大概率击穿保本线。
+    </div>
+
+    <h3>合浦与灵川的特殊气候约束</h3>
+    <p>合浦的决策模型应增加<strong>台风灾后恢复成本</strong>作为独立科目，并按「至少一个台风影响年份」纳入项目周期测算。灵川不作为规模化落点，其模型仅用于<strong>反推订单条款的合理价格</strong>：如果订单价 2.6 元／斤无法覆盖寒露风提前导致的抢收或减产损失，该订单模式对博白／合浦的参照意义就有限。</p>
+  </section>
+
+  <!-- 9 -->
+  <section class="ch">
+    <div class="ch-head">
+      <div class="ch-num">09</div>
+      <h2>一票否决清单</h2>
+    </div>
+    <p>以下任一项成立，即构成一票否决：</p>
+
+    <div class="veto">
+      <div class="n">1</div>
+      <p><strong>博白目标地块无可靠的秋季灌溉水源，或灌溉成本未按年度必选项计入基准模型。</strong>历史数据显示博白秋季降水偏少有明确记录，年际波动超过 1350mm，「平均年景」不能作为水源规划的依据。</p>
+    </div>
+    <div class="veto">
+      <div class="n">2</div>
+      <p><strong>博白／合浦目标地块的排水条件未经受过大雨或台风实战检验，或近 10 年有涝渍减产记录。</strong>博白的暴雨风险和合浦的台风暴雨风险均不支持仅凭直观判断作出结论。</p>
+    </div>
+    <div class="veto">
+      <div class="n">3</div>
+      <p><strong>合浦备选地的决策模型中未单列台风灾后恢复成本，或 6.5 元／斤的价格信号无法对应到排水和灌溉条件可验证的具体地块。</strong></p>
+    </div>
+    <div class="veto">
+      <div class="n">4</div>
+      <p><strong>技术团队无法给出一个使秋播毛豆开花结荚期避开博白 10 月中旬寒露风高风险段、或在灵川避开 9 月下旬至 10 月上旬寒露风窗口的播期方案。</strong>此项为硬性条件。</p>
+    </div>
+    <div class="veto">
+      <div class="n">5</div>
+      <p><strong>合作社或代办无法提供在寒露风或秋旱年份的实际应对记录，仅能描述「正常年份」的操作流程。</strong>气候韧性的核心不是平均表现，而是偏差年份的生存能力。</p>
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section class="ch">
+    <div class="ch-head">
+      <div class="ch-num">10</div>
+      <h2>调研交付物清单</h2>
+    </div>
+    <p>气候专项交付物：</p>
+
+    <div class="deliver">
+      <span class="no">气候专项</span>
+      <h4 style="margin-top:0;">《博白／合浦／灵川多年气候风险核查表》</h4>
+      <p style="margin-bottom:0;">逐地块记录<strong>历史秋旱影响、灌溉水源枯期可用量、历史暴雨／台风涝渍记录、寒露风年份抢收组织能力、技术团队确认的安全播期</strong>，并附上所引用数据的来源和年份。</p>
+    </div>
+  </section>
+
+  <!-- 11 -->
+  <section class="ch">
+    <div class="ch-head">
+      <div class="ch-num">11</div>
+      <h2>数据说明与风险提示</h2>
+    </div>
+
+    <ol class="notes">
+      <li>本报告气候数据主要来自博白县气象局公开统计、博白 2018 年气候影响评价、合浦县近十年气象灾害研究、灵川县志灾害性天气章节、合浦县志旱灾章节，以及广西多年农业气象记录。<strong>部分地方志数据的统计年代较早（如灵川寒露风数据基于 1963—1990 年资料），其频率特征用于判断风险方向而非精确概率。</strong></li>
+      <li>博白「寒露风 10 月中旬记录」来自 2018 年单年观测，不应直接等同于「每年 10 月中旬必现寒露风」，但可作为<strong>风险窗口存在的证据</strong>。</li>
+      <li>合浦台风频率 61.9% 的数据窗口为 2003—2012 年，<strong>近年的台风活动频率可能已有变化</strong>，实地调研时应向当地气象或农业部门索取更新数据。</li>
+      <li>毛豆温度临界值（低于 15℃ 开花延迟授粉不良）为一般性农艺参数，<strong>具体品种的耐低温能力应由项目技术团队确认</strong>；本报告引用灵川寒露风 20℃ 阈值，其高于毛豆的 15℃ 临界值，但足以构成灌浆抑制。</li>
+      <li>灌溉成本、抢收上浮幅度、台风恢复成本在报告中为<strong>风险提示性框架</strong>，具体金额必须以实地询价和技术方案为准，不得直接引用为预算数字。</li>
+      <li><strong>种子和技术团队不在本报告分析范围内</strong>；气候风险的农艺应对（品种耐性、播期调整、灌溉方案）由项目方技术团队最终确认并承担相应责任。</li>
+    </ol>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <div class="line"></div>
+  <p>本报告为种植前投资决策的参考依据，气候数据用于判断风险方向，不作为精确概率引用。<br>成本金额与农艺结论以实地询价、技术方案为准。</p>
+  <div class="seal">广西毛豆种植项目 · 投资决策商业报告</div>
+</footer>
+
+</body>
+</html>
